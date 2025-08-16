@@ -1,24 +1,30 @@
 <template>
-  <Primitive :class="styles({ class: props.class })" :as="as" :as-child="asChild">
+  <Primitive
+    data-slot="card-header"
+    :class="styles({ class: props.class })"
+    :as="as"
+    :as-child="asChild"
+  >
     <slot />
   </Primitive>
 </template>
 
 <script lang="ts" setup>
-  import { Primitive } from "radix-vue";
-  import type { PrimitiveProps } from "radix-vue";
+  import { Primitive } from "reka-ui";
+  import type { PrimitiveProps } from "reka-ui";
+  import type { HTMLAttributes } from "vue";
 
   const props = withDefaults(
     defineProps<
       PrimitiveProps & {
         /** Custom class(es) to add to the element */
-        class?: any;
+        class?: HTMLAttributes["class"];
       }
     >(),
     { as: "div" }
   );
 
   const styles = tv({
-    base: "flex flex-col space-y-1.5 p-6 [&+*]:pt-0",
+    base: "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
   });
 </script>

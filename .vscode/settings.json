@@ -1,15 +1,12 @@
 {
+  "editor.formatOnSave": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "files.associations": {
     "*.css": "tailwindcss"
   },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "tailwindCSS.experimental.classRegex": [
-    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    "tw`(.*?)`",
-    "tw\\('(.*?)'\\)",
-    "tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"
-  ]
+  "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"],
+  "tailwindCSS.experimental.classRegex": [["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*)[\"'`]"]],
+  "eslint.useFlatConfig": true
 }

@@ -1,17 +1,26 @@
 <template>
-  <Primitive :class="styles({ class: props.class })" v-bind="forwarded">
+  <Primitive
+    data-slot="container"
+    :data-constrained="constrained"
+    :class="styles({ class: props.class, constrained })"
+    v-bind="forwarded"
+  >
     <slot />
   </Primitive>
 </template>
 
 <script lang="ts" setup>
-  import { Primitive } from "radix-vue";
-  import type { PrimitiveProps } from "radix-vue";
+  import { Primitive } from "reka-ui";
+  import type { PrimitiveProps } from "reka-ui";
+  import type { HTMLAttributes } from "vue";
 
   const props = withDefaults(
     defineProps<
       PrimitiveProps & {
-        class?: any;
+        /** Custom class(es) to add to the element */
+        class?: HTMLAttributes["class"];
+        /** Whether to constrain the width of the container */
+        constrained?: boolean;
       }
     >(),
     {
@@ -19,9 +28,18 @@
     }
   );
 
-  const forwarded = reactiveOmit(props, "class");
+  const forwarded = reactiveOmit(props, "class", "constrained");
 
   const styles = tv({
-    base: "container mx-auto",
+    base: "mx-auto w-full max-w-7xl 2xl:max-w-(--breakpoint-2xl)",
+    variants: {
+      constrained: {
+        true: "sm:px-6",
+        false: "px-4 sm:px-6",
+      },
+    },
+    defaultVariants: {
+      constrained: false,
+    },
   });
 </script>

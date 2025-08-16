@@ -1,50 +1,36 @@
-# Nuxt 3 UI Thing Starter
+# UI Thing Starter
 
-An opinionated Nuxt 3 starter template with components built with [UI Thing](https://ui-thing.behonbaker.com/getting-started/introduction). This is my personal port of the shadcn/ui library.
+Looking to start a new Nuxt project? Look no further! UI Thing Starter is the perfect template to kickstart your development.
 
-Feel free to make changes and delete what you don't need.
+![UI Thing Starter Image](/public/cover.jpeg)
 
 ## Demo
 
-The starter is deployed on Netlify [here](https://ui-thing-starter.behonbaker.com/)
+You can find a live demo of UI Thing Starter at [Counter Demo](https://ui-thing-starter.behonbaker.com/)
+
+## Features
+
+- **Nuxt 4**: The latest version of Nuxt for modern web development.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **Pinia**: State management library for Vue.js applications.
 
 ## Getting Started
 
-Clone the repo
+To get started with UI Thing Starter, follow these steps:
+
+1. Clone the repository:
 
 ```bash
-npx --yes giget@latest gh:BayBreezy/nuxt-ui-thing-starter my-nuxt-app --install
+npx giget@latest gh:BayBreezy/ui-thing-starter my-app --install
 ```
 
-Install the dependencies
+2. Start the development server:
 
 ```bash
-cd my-nuxt-app &&  npm install
-```
-
-Start the dev server
-
-```bash
+cd my-app
 npm run dev
 ```
 
----
+## UI Thing
 
-<br/>
-
-![Cover](/public/ui-thing-social.png)
-
-## Major update
-
-So on Jan 11, 2024, I remembered that I created this repo. I was going through github and saw where someone gave it a star.... I was like.. Hold up.. when did I create this? Then I realized it was created while I was experimenting with the Radix-Vue package (my very first attempt to replicate shadcn/ui). I was like.. I should update this repo with the latest version of UI Thing. So I did. I also updated the README.md file to reflect the changes.
-
-## What's included?
-
-- All the components from UI Thing
-  - So this may impact performance. I'm not sure. I would recommend that you delete the components that you do not need.
-- [Notivue](https://notivuedocs.netlify.app/installation/nuxt.html) was also added to the project.
-  - This is not needed, I just wanted another toast library to play with. Feel free to remove it if VueSonner or the built in toast works for you.
-- Pinia
-  - This can be removed if you don't need it as well.
-- [V-Wave](https://github.com/justintaddei/v-wave)
-  - It just adds a ripple effect any component that you want. It's pretty cool. You can remove it if you don't need it.
+To learn more about the library, you can visit the docs at [UI Thing Documentation](https://uithing.com).

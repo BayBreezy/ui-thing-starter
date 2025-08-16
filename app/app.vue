@@ -1,19 +1,16 @@
 <template>
-  <ConfigProvider :use-id="useIdFunction">
-    <div>
-      <NuxtLoadingIndicator />
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-      <!-- Delete the toast that you don't need -->
-      <UiVueSonner />
-      <UiNotivue />
-    </div>
-  </ConfigProvider>
+  <div>
+    <NuxtRouteAnnouncer />
+    <NuxtLoadingIndicator />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
 
-<script setup lang="ts">
-  import { ConfigProvider } from "radix-vue";
-
-  const useIdFunction = () => useId()!;
+<script lang="ts" setup>
+  useHead({
+    htmlAttrs: { lang: "en" },
+    link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.ico" }],
+  });
 </script>

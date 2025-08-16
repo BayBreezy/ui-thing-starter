@@ -1,5 +1,10 @@
 <template>
-  <Primitive :class="styles({ class: props.class })" :as="as" :as-child="asChild">
+  <Primitive
+    data-slot="card-title"
+    :class="styles({ class: props.class })"
+    :as="as"
+    :as-child="asChild"
+  >
     <slot>
       {{ title }}
     </slot>
@@ -7,8 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { Primitive } from "radix-vue";
-  import type { PrimitiveProps } from "radix-vue";
+  import { Primitive } from "reka-ui";
+  import type { PrimitiveProps } from "reka-ui";
+  import type { HTMLAttributes } from "vue";
 
   const props = withDefaults(
     defineProps<
@@ -16,7 +22,7 @@
         /** Title to display in the card */
         title?: string;
         /** Custom class(es) to add to the element */
-        class?: any;
+        class?: HTMLAttributes["class"];
       }
     >(),
     {
@@ -25,6 +31,6 @@
   );
 
   const styles = tv({
-    base: "text-xl font-semibold leading-none tracking-tight",
+    base: "leading-none font-semibold tracking-tight",
   });
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="styles({ class: props.class })">
+  <Primitive data-slot="card" :as="as" :as-child="asChild" :class="styles({ class: props.class })">
     <slot>
       <slot name="header">
         <UiCardHeader>
@@ -25,8 +25,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { Primitive } from "radix-vue";
-  import type { PrimitiveProps } from "radix-vue";
+  import { Primitive } from "reka-ui";
+  import type { PrimitiveProps } from "reka-ui";
+  import type { HTMLAttributes } from "vue";
 
   const props = withDefaults(
     defineProps<
@@ -38,19 +39,13 @@
         /** Content that should be displayed. Passed to the `CardContent` component */
         content?: string;
         /** Custom class(es) to add to the element */
-        class?: any;
+        class?: HTMLAttributes["class"];
       }
     >(),
-    {
-      as: "div",
-      title: undefined,
-      description: undefined,
-      content: undefined,
-      class: undefined,
-    }
+    { as: "div" }
   );
 
   const styles = tv({
-    base: "rounded-lg border bg-card text-card-foreground shadow-sm",
+    base: "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
   });
 </script>

@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@pinia/nuxt",
     "nuxt-og-image",
+    "@nuxt/test-utils/module",
   ],
   imports: {
     imports: [

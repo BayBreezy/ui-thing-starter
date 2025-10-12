@@ -50,7 +50,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.6.2",
-    "@iconify-json/lucide": "^1.2.63",
+    "@iconify-json/lucide": "^1.2.69",
     "@nuxt/test-utils": "^3.19.2",
     "@pinia/testing": "^1.0.2",
     "@testing-library/vue": "^8.1.0",

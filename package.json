@@ -39,7 +39,7 @@
     "nuxt": "^4.0.3",
     "nuxt-og-image": "^5.1.9",
     "pinia": "^3.0.3",
-    "reka-ui": "^2.4.1",
+    "reka-ui": "^2.6.0",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^2.1.0",
     "tailwindcss": "^4.1.12",

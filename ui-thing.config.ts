@@ -7,5 +7,5 @@ export default {
   utilsLocation: "app/utils",
   force: true,
   useDefaultFilename: true,
-  packageManager: "npm",
+  packageManager: "bun",
 };

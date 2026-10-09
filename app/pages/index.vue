@@ -16,7 +16,7 @@
     twitterDescription: description,
     twitterCard: "summary_large_image",
   });
-  defineOgImageComponent("Site", {
+  defineOgImage("Site", {
     title,
     description,
   });

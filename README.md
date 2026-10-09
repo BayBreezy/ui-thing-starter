@@ -21,14 +21,14 @@ To get started with UI Thing Starter, follow these steps:
 1. Clone the repository:
 
 ```bash
-npx giget@latest gh:BayBreezy/ui-thing-starter my-app --install
+bunx giget@latest gh:BayBreezy/ui-thing-starter my-app --install
 ```
 
 2. Start the development server:
 
 ```bash
 cd my-app
-npm run dev
+bun run dev
 ```
 
 ## UI Thing

@@ -1,6 +1,8 @@
 <template>
   <div class="h-full w-full bg-zinc-950 p-20 text-zinc-50">
-    <div class="relative h-full w-full border border-zinc-900/80 bg-zinc-900/10 p-10">
+    <div
+      class="relative h-full w-full [border-width:1px] border-solid border-zinc-900/80 bg-zinc-900/10 p-10"
+    >
       <div class="absolute -top-px right-0 h-px w-12 bg-zinc-700" />
       <div class="absolute top-0 -right-px h-12 w-px bg-zinc-700" />
       <div class="absolute right-0 -bottom-px h-px w-12 bg-zinc-700" />

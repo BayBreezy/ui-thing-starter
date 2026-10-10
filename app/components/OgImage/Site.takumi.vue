@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full w-full bg-zinc-950 p-20 text-zinc-50">
+  <div class="flex h-full w-full bg-zinc-950 p-20 text-zinc-50">
     <div
-      class="relative h-full w-full [border-width:1px] border-solid border-zinc-900/80 bg-zinc-900/10 p-10"
+      class="relative flex h-full w-full flex-col gap-6 [border-width:1px] border-solid border-zinc-900/80 bg-zinc-900/10 p-10"
     >
       <div class="absolute -top-px right-0 h-px w-12 bg-zinc-700" />
       <div class="absolute top-0 -right-px h-12 w-px bg-zinc-700" />
@@ -14,10 +14,10 @@
       <div class="absolute bottom-0 -left-px h-12 w-px bg-zinc-700" />
 
       <h1 class="text-5xl leading-none tracking-tighter">{{ title }}</h1>
-      <p class="text-3xl text-pretty whitespace-pre-line opacity-80" v-html="description" />
+      <p class="text-3xl text-pretty whitespace-pre-line opacity-80">{{ description }}</p>
 
       <div class="absolute right-6 bottom-6">
-        <img src="/icon.png" alt="UI Thing Icon" class="h-10 w-10 object-contain" />
+        <img :src="icon" alt="UI Thing Icon" class="h-10 w-10 object-contain" />
       </div>
     </div>
   </div>
@@ -28,4 +28,7 @@
     title?: string;
     description?: string;
   }>();
+
+  // The renderer can't resolve relative URLs, so build an absolute one from the site URL.
+  const icon = new URL("/icon.png", useSiteConfig().url).href;
 </script>

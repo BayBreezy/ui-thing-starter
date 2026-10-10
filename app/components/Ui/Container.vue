@@ -2,7 +2,7 @@
   <Primitive
     data-slot="container"
     :data-constrained="constrained"
-    :class="styles({ class: props.class, constrained })"
+    :class="styles({ class: normalizeClass(props.class) || undefined, constrained })"
     v-bind="forwarded"
   >
     <slot />
@@ -12,14 +12,15 @@
 <script lang="ts" setup>
   import { Primitive } from "reka-ui";
   import type { PrimitiveProps } from "reka-ui";
+  import { normalizeClass } from "vue";
   import type { HTMLAttributes } from "vue";
 
   const props = withDefaults(
     defineProps<
       PrimitiveProps & {
-        /** Custom class(es) to add to the element */
+        /** Custom class(es) to add to the element. */
         class?: HTMLAttributes["class"];
-        /** Whether to constrain the width of the container */
+        /** Whether to constrain the width of the container. */
         constrained?: boolean;
       }
     >(),
